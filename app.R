@@ -40,7 +40,11 @@ ui <- fluidPage(
   titlePanel(h1("Spatial Analysis Tool")),
   sidebarLayout(
     sidebarPanel(
-      helpText("Select a Variogram Model and Parameters to fit the Empirical Variogram in the Top-Left Panel."),
+      helpText("This tool allows modelling and interpolating Spatial Data through an Ordinary Kriging approach.
+               Select a Variogram Model and Parameters to fit the Empirical Variogram in the Top-Left Panel. 
+               The Bottom-Right panel will update the interpolation results to reflect your chosen model.
+               You can alter the variogram model/parameters and see how they affect the interpolated values.
+               Currently WIP. Next steps will allow you to import your own data."),
       selectInput('model', label = 'Variogram Model', 
                   choices = availableModels, selected = availableModels[1]),
       sliderInput('Nugget', label = 'Nugget', min = 0, max = maxGamma, value = 0),
